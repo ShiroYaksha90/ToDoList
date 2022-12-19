@@ -107,6 +107,6 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License <a name="license"></a>
 
-This [project](https://github.com/ShiroYaksha90/ToDoList.git) is [MIT](https://github.com/ShiroYaksha90/Webpack/blob/main/LICENSE) licensed.
+This [project](https://github.com/ShiroYaksha90/ToDoList.git) is [MIT](https://github.com/ShiroYaksha90/ToDoList/blob/listStructure/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
