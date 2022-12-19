@@ -43,7 +43,7 @@
 
 
 - [Live Demo]()
-
+  Soon a live link will be available 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
