@@ -4,9 +4,8 @@
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
-    <!-- - [Tech Stack](#tech-stack) -->
+    - [Tech Stack](#tech-stack)
     <!-- - [Key Features](#key-features) -->
-  - [Teck stack] (#tech-stack)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
