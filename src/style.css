@@ -1,0 +1,75 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #edede9;
+}
+
+.my-list {
+  width: 60%;
+  margin: 40px auto 0 auto;
+  background: #fff;
+  box-shadow: 3px 3px 20px #888;
+}
+
+.formTitle {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #dedbd2;
+}
+
+.formControl {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #dedbd2;
+}
+
+.fa-turn-down-left {
+  color: red;
+}
+
+label {
+  display: none;
+}
+
+.to-do {
+  padding: 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+
+article {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #dedbd2;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+}
+
+.clear {
+  padding: 10px;
+  background: #edede9;
+  text-align: center;
+}
+
+.clearbtn {
+  border: none;
+  outline: none;
+  font-size: 20px;
+  color: #888;
+}
