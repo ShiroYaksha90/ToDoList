@@ -42,8 +42,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo]()
-  Soon a live link will be available 
+- [Live Demo](https://shiroyaksha90.github.io/ToDoList/)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
