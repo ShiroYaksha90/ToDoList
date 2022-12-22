@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #edede9;
+  background: #d3d3d3;
 }
 
 .my-list {
@@ -61,10 +61,33 @@ article {
   gap: 20px;
 }
 
+.icons {
+  display: flex;
+  gap: 30px;
+}
+
+.fa-ellipsis-vertical {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.fa-trash {
+  display: none;
+  cursor: pointer;
+}
+
+.show {
+  display: inline-block;
+}
+
 .clear {
   padding: 10px;
   background: #edede9;
   text-align: center;
+  cursor: pointer;
 }
 
 .clearbtn {
@@ -72,4 +95,23 @@ article {
   outline: none;
   font-size: 20px;
   color: #888;
+}
+
+.list-container {
+  display: none;
+}
+
+.display-container {
+  display: block;
+}
+
+.edit-input {
+  width: 80%;
+  border: none;
+  outline: none;
+  background: #e9d8a6cc;
+}
+
+.edit-article {
+  background: #e9d8a6cc;
 }
