@@ -28,7 +28,6 @@ const addTask = (e) => {
     <i class="fa-solid fa-ellipsis-vertical"></i>
     <i class="fa-solid fa-trash-clock fa-trash"></i>
     </div>`;
-    // const p = document.querySelector('.list-item');
     const opBtn = article.querySelector('.fa-ellipsis-vertical');
     const removeBtn = article.querySelector('.fa-trash');
     opBtn.addEventListener('click', (e) => {
@@ -41,11 +40,9 @@ const addTask = (e) => {
       article.classList.add('edit-article');
       const p = document.querySelector('.list-item');
       editInput.value = editList.textContent;
-      // editList.textContent = editInput.value;
-      const editIndex = e.target.parentElement.dataset.index;
+      const editIndex = article.dataset.index;
       editInput.focus();
       const descDiv = e.target.parentElement.previousElementSibling.lastElementChild;
-      // descDiv.removeChild(editList);
       editList.style.display = 'none';
       descDiv.appendChild(editInput);
 
@@ -60,9 +57,11 @@ const addTask = (e) => {
           article.classList.remove('edit-article');
           opBtn.classList.remove('hide');
           removeBtn.classList.remove('show');
+          console.log(editIndex)
           // console.log(localStorage.tasks)
+          editLocalStorage(editList.textContent, status, editIndex);
         }
-        editLocalStorage(editList.value, status, editIndex);
+        // editLocalStorage(value, status, editIndex);
       });
     });
     removeBtn.addEventListener('click', (e) => {

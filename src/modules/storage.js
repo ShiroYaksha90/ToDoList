@@ -20,11 +20,11 @@ const removeFromLocalStorage = (index) => {
   localStorage.setItem('tasks', JSON.stringify(tasksList));
 };
 
-const editLocalStorage = (task, status, index) => {
+const editLocalStorage = (editedtask, status, index) => {
   let tasksList = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
   tasksList = tasksList.map((item) => {
     if (item.index === index) {
-      item.task = task;
+      item.task = editedtask;
       item.completed = status;
     }
     return item;
