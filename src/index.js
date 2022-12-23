@@ -49,16 +49,12 @@ const addTask = (e) => {
       editInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
           editList.textContent = editInput.value;
-          // p.textContent = editInput.value
           descDiv.appendChild(editList);
           descDiv.removeChild(editInput);
           p.style.display = 'block';
-          // descDiv.remove('edit-article');
           article.classList.remove('edit-article');
           opBtn.classList.remove('hide');
           removeBtn.classList.remove('show');
-          console.log(editIndex)
-          // console.log(localStorage.tasks)
           editLocalStorage(editList.textContent, status, editIndex);
         }
         // editLocalStorage(value, status, editIndex);
