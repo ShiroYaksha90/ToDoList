@@ -38,7 +38,6 @@ const addTask = (e) => {
       editInput.type = 'text';
       editInput.className = 'edit-input';
       article.classList.add('edit-article');
-      const p = document.querySelector('.list-item');
       editInput.value = editList.textContent;
       const editIndex = article.dataset.index;
       editInput.focus();
@@ -51,7 +50,7 @@ const addTask = (e) => {
           editList.textContent = editInput.value;
           descDiv.appendChild(editList);
           descDiv.removeChild(editInput);
-          p.style.display = 'block';
+          editList.style.display = 'block';
           article.classList.remove('edit-article');
           opBtn.classList.remove('hide');
           removeBtn.classList.remove('show');
