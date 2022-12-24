@@ -1,12 +1,15 @@
-const resetIndex = () => {
-  const tasksList = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-  const arr = [];
+import resetIndex from "./rest.js";
 
-  tasksList.forEach((obj) => {
-    const newObj = { ...obj, index: arr.length + 1 };
-    arr.push(newObj);
-  });
-  localStorage.setItem('tasks', JSON.stringify(arr));
+const clearCompletedTask = () => {
+    let tasksArr = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+    tasksArr = tasksArr.filter((task) => {
+        if (task.status !== true) {
+            return true;
+        }
+        return false;
+    });
+    localStorage.setItem('tasks', JSON.stringify(tasksArr));
+    resetIndex();
+    window.location.reload();
 };
-
-export default resetIndex;
+export default clearCompletedTask;

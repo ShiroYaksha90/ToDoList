@@ -30,6 +30,7 @@ const editLocalStorage = (editedtask, status, index) => {
     return item;
   });
   localStorage.setItem('tasks', JSON.stringify(tasksList));
+  window.location.reload();
 };
 
 export {
