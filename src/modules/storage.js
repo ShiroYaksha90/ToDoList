@@ -1,8 +1,7 @@
-const addToLocalStorage = (task, completed, index) => {
-  const tasks = { task, completed, index };
+const addToLocalStorage = (task, status, index) => {
+  const tasks = { task, status, index };
 
   const tasksList = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-
   tasksList.push(tasks);
   localStorage.setItem('tasks', JSON.stringify(tasksList));
 };
@@ -18,6 +17,7 @@ const removeFromLocalStorage = (index) => {
   });
 
   localStorage.setItem('tasks', JSON.stringify(tasksList));
+  window.location.reload();
 };
 
 const editLocalStorage = (editedtask, status, index) => {
@@ -25,7 +25,7 @@ const editLocalStorage = (editedtask, status, index) => {
   tasksList = tasksList.map((item) => {
     if (item.index === index) {
       item.task = editedtask;
-      item.completed = status;
+      item.status = status;
     }
     return item;
   });

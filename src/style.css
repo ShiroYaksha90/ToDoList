@@ -87,7 +87,6 @@ article {
   padding: 10px;
   background: #edede9;
   text-align: center;
-  cursor: pointer;
 }
 
 .clearbtn {
@@ -95,6 +94,7 @@ article {
   outline: none;
   font-size: 20px;
   color: #888;
+  cursor: pointer;
 }
 
 .list-container {
