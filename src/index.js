@@ -23,7 +23,7 @@ const addTask = (e) => {
     attribute.value = index;
     article.setAttributeNode(attribute);
     article.innerHTML = `<div class="item">
-    <input type="checkbox" class="check-box"><div class="list"><p class="list-item">${item}</p></div>
+    <input type="checkbox" class="check-box" checked=${item.status}><div class="list"><p class="list-item">${item}</p></div>
     </div>
     <div class="icons">
     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -127,7 +127,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const attribute = document.createAttribute('data-index');
       attribute.value = item.index;
       article.setAttributeNode(attribute);
-      article.innerHTML = `<div class="item"><input type="checkbox" class="check-box">
+      article.innerHTML = `<div class="item"><input type="checkbox" class="check-box" checked=${item.status}>
       <div class="list"><p class="list-item">${item.task}</p></div>
       </div>
       <div class="icons">
