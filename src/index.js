@@ -29,30 +29,29 @@ const addTask = (e) => {
     <i class="fa-solid fa-ellipsis-vertical"></i>
     <i class="fa-solid fa-trash-clock fa-trash"></i>
     </div>`;
-    const checkBoxes = document.querySelectorAll('.check-box');
-    checkBoxes.forEach((checkbox) => {
-      checkbox.addEventListener('change', (e) => {
-        if (checkbox.checked === true){
+    const checkBoxes = article.querySelectorAll('.check-box');
+    for (let i = 0; i < checkBoxes.length; i += 1) {
+      checkBoxes[i].addEventListener('change', (e) => {
+        if (checkBoxes[i].checked === true) {
           const task = e.target.nextElementSibling.childNodes[0];
           task.style.textDecoration = 'line-through';
-          const taskArticle = e.target.parentElement.parentElement;
-          const {index} = taskArticle.dataset;
+          const { index } = task.parentElement.parentElement.parentElement.dataset;
           const tasksArr = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
-          tasksArr.filter ((task) => {
-            if (task.index === index){
-              task.status = true;
+          tasksArr.filter((item) => {
+            if (item.index === index) {
+              item.status = true;
             }
-            return false
+            return false;
           });
           localStorage.setItem('tasks', JSON.stringify(tasksArr));
-        }else {
+        } else {
           const task = e.target.nextElementSibling.childNodes[0];
-          task.style.textDecoration = "none"
+          task.style.textDecoration = 'none';
           const taskArticle = e.target.parentElement.parentElement;
-          const {index} = taskArticle.dataset
+          const { index } = taskArticle.dataset;
           const tasksArr = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
           tasksArr.filter((task) => {
-            if (task.index === index){
+            if (task.index === index) {
               task.status = false;
             }
             return false;
@@ -60,7 +59,7 @@ const addTask = (e) => {
           localStorage.setItem('tasks', JSON.stringify(tasksArr));
         }
       });
-    });
+    }
     const opBtn = article.querySelector('.fa-ellipsis-vertical');
     const removeBtn = article.querySelector('.fa-trash');
     opBtn.addEventListener('click', (e) => {
@@ -89,7 +88,6 @@ const addTask = (e) => {
           removeBtn.classList.remove('show');
           editLocalStorage(editList.textContent, status, editIndex);
         }
-        
       });
     });
     removeBtn.addEventListener('click', (e) => {
@@ -116,7 +114,8 @@ const addTask = (e) => {
 // console.log(localStorage.tasks)
 };
 
-//test
+// Clear all tasks
+
 myForm.addEventListener('submit', addTask);
 clearbtn.addEventListener('click', clearCompletedTask);
 window.addEventListener('DOMContentLoaded', () => {
@@ -126,7 +125,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const article = document.createElement('article');
       article.className = 'article';
       const attribute = document.createAttribute('data-index');
-      attribute.value = tasksArr.index;
+      attribute.value = item.index;
       article.setAttributeNode(attribute);
       article.innerHTML = `<div class="item"><input type="checkbox" class="check-box">
       <div class="list"><p class="list-item">${item.task}</p></div>
@@ -142,20 +141,20 @@ window.addEventListener('DOMContentLoaded', () => {
             const task = e.target.nextElementSibling.childNodes[0];
             task.style.textDecoration = 'line-through';
             const taskArticle = e.target.parentElement.parentElement;
-            const {index} = taskArticle.dataset;
+            const { index } = taskArticle.dataset;
             const tasksArr = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
             tasksArr.filter((task) => {
               if (task.index === index) {
                 task.status = true;
               }
-              return false
+              return false;
             });
             localStorage.setItem('tasks', JSON.stringify(tasksArr));
           } else {
             const task = e.target.nextElementSibling.childNodes[0];
             task.style.textDecoration = 'none';
             const taskArticle = e.target.parentElement.parentElement;
-            const {index} = taskArticle.dataset;
+            const { index } = taskArticle.dataset;
             const tasksArr = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
             tasksArr.filter((task) => {
               if (task.index === index) {
@@ -172,7 +171,7 @@ window.addEventListener('DOMContentLoaded', () => {
       opBtn.addEventListener('click', (e) => {
         opBtn.classList.add('.hide');
         removeBtn.classList.add('.show');
-        const edittask = e.target.parentElement.previousElementSibling.lastElementChild.childNodes[0];
+        const edit = e.target.parentElement.previousElementSibling.lastElementChild.childNodes[0];
         const editInput = document.createElement('input');
         editInput.type = 'text';
         editInput.className = 'edit-input';
@@ -180,45 +179,33 @@ window.addEventListener('DOMContentLoaded', () => {
         const editIndex = e.target.parentElement.parentElement.dataset.index;
         editInput.focus();
         const descDiv = e.target.parentElement.previousElementSibling.lastElementChild;
-        descDiv.removeChild(edittask);
+        edit.style.display = 'none';
         descDiv.appendChild(editInput);
-
         editInput.addEventListener('keypress', (e) => {
           if (e.key === 'Enter') {
-            edittask.textContent = editInput.value;
-            descDiv.appendChild(edittask);
+            edit.textContent = editInput.value;
+            descDiv.appendChild(edit);
             descDiv.removeChild(editInput);
             article.classList.remove('.edit-article');
             opBtn.classList.remove('.hide');
             removeBtn.classList.remove('.show');
           }
-          editLocalStorage(edittask.textContent, false, editIndex);
+          editLocalStorage(edit.textContent, false, editIndex);
         });
       });
       removeBtn.addEventListener('click', (e) => {
         const task = e.target.parentElement.parentElement;
-        const {index} = task.dataset;
+        const { index } = task.dataset;
         itemesList.removeChild(task);
         if (itemesList.children.length === 0) {
-          listContainer.classList.remove('.display-container');
+          listContainer.classList.remove('display-container');
         }
         removeFromLocalStorage(index);
         resetIndex();
         window.location.reload();
       });
       itemesList.appendChild(article);
-      listContainer.classList.add('.display-conrainer');
+      listContainer.classList.add('display-container');
     });
   }
 });
-// Clear all tasks
-
-// myForm.addEventListener('submit', addTask);
-// clearbtn.addEventListener('click', () => {
-//   const tasks = document.querySelector('.itemesList');
-//   while (tasks.firstChild) {
-//     tasks.removeChild(tasks.firstChild);
-//   }
-//   listContainer.classList.remove('display-container');
-//   localStorage.removeItem('tasks');
-// });

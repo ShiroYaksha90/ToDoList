@@ -3,12 +3,11 @@ const resetIndex = () => {
   const arr = [];
 
   tasksList.forEach((obj) => {
-    const newObj = { ...obj, index: (arr.length + 1).toString() 
-    };
+    const newObj = { ...obj, index: (arr.length + 1).toString() };
     arr.push(newObj);
   });
   localStorage.setItem('tasks', JSON.stringify(arr));
-  window.location.reload()
+  window.location.reload();
 };
 
 export default resetIndex;
