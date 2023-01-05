@@ -28,8 +28,7 @@
 
 > Describe your project in 1 or 2 sentences.
 
-**[To Do List]** is a to do list app where users can add, edit, and delete tasks
-
+**[To Do List]** is educational project is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 ## 🛠 Built With <a name="built-with">Webpack</a>
 ### Tech Stack <a name="tech-stack">
