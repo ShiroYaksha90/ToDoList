@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 ## To Do list: Final Product <!---Title of Project-->
 
-"To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. You will build a simple website that allows for doing that, and you will do it using JavaScript ES6 syntax and Webpack!
+"To-do list" is a tool that helps organize your day. It simply lists the things that you need to do and allows you to mark them as complete. I will build it using JavaScript ES6 syntax and Webpack!
 
 Milestone 1: I will build a simple HTML list of To Do tasks. The list will be styled according to the specifications listed later in this lesson. This simple web page will be built using webpack and served by a webpack dev server.
 
