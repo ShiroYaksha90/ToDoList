@@ -28,7 +28,7 @@
 
 > Describe your project in 1 or 2 sentences.
 
-**[To Do List]** is educational project is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
+**[To Do List]** is educational project and it is a tool that helps you organize your day. It simply lists the things that you need to do, edit, delete them and clear the completed one's. Each To do task is created dynamically using JavaScript and stored in the browser localstorage.
 
 ## 🛠 Built With <a name="built-with">Webpack</a>
 ### Tech Stack <a name="tech-stack">
