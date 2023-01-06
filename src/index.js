@@ -23,7 +23,7 @@ const addTask = (e) => {
     attribute.value = index;
     article.setAttributeNode(attribute);
     article.innerHTML = `<div class="item">
-    <input type="checkbox" class="check-box" checked=${item.status}><div class="list"><p class="list-item">${item}</p></div>
+    <input type="checkbox" class="check-box"><div class="list"><p class="list-item">${item}</p></div>
     </div>
     <div class="icons">
     <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -99,7 +99,6 @@ const addTask = (e) => {
       }
       removeFromLocalStorage(index);
       resetIndex();
-      // console.log(localStorage.tasks)
     });
 
     itemesList.appendChild(article);
@@ -111,7 +110,6 @@ const addTask = (e) => {
     itemObject.index = index;
     addToLocalStorage(item, status, index);
   }
-// console.log(localStorage.tasks)
 };
 
 // Clear all tasks
