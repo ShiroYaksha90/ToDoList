@@ -1,5 +1,13 @@
 <a name="readme-top"></a>
+## To Do list: Final Product <!---Title of Project-->
 
+"To-do list" is a tool that helps organize your day. It simply lists the things that you need to do and allows you to mark them as complete. I will build it using JavaScript ES6 syntax and Webpack!
+
+Milestone 1: I will build a simple HTML list of To Do tasks. The list will be styled according to the specifications listed later in this lesson. This simple web page will be built using webpack and served by a webpack dev server.
+
+Milestone 2: I will implement the CRUD (create, read, update, delete) methods. All the elements of the user interface will be fully functional and the application will be completed.
+
+Milestone 3: I will add some functionality to the application to make it interactive. The user will also be able to mark task completion by selecting the corresponding checkbox (or undo it by unchecking the checkbox). The updated tasks list will be stored in local storage.
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
@@ -26,10 +34,8 @@
 
 # 📖 [To Do List] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
 
-**[To Do List]** is a to do list app where users can add, edit, and delete tasks
-
+**To Do List** is educational project and it is a tool that helps you organize your day. It simply lists the things that you need to do, edit, delete them and clear the completed one's. Each To do task is created dynamically using JavaScript and stored in the browser localstorage.
 
 ## 🛠 Built With <a name="built-with">Webpack</a>
 ### Tech Stack <a name="tech-stack">
